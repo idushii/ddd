@@ -1,414 +1,132 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      html,
-      body {
-        margin: 0;
-        height: 100%;
-      }
-      .page {
-        display: flex;
-        height: 100%;
-        flex-direction: column;
-      }
-      .messages {
-        display: flex;
-        flex-direction: column-reverse;
-        overflow: auto;
-      }
+<html>
+<head>
+  <meta charset="utf-8">
+<!--
+Created using JS Bin
+http://jsbin.com
 
-      .message {
-        padding: 10px;
-      }
+Copyright (c) 2020 by rahowl (http://jsbin.com/tozirax/14/edit)
 
-      .send {
-          background-color: grey;
-          display: grid;
-          width: 100%;
-          grid-template-columns: 1fr 100px;
-      }
-      textarea {
-          width: 100%;
-          height: 50px;
-      }
-      button {
-        height: 50px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="page">
-      <div class="messages">
-        <div class="message">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
-          ducimus.
-        </div>
-        <div class="message">
-          Dolores provident ab ratione laboriosam! Hic quo natus quas rem.
-        </div>
-        <div class="message">
-          Esse quidem sit cum error enim fuga odit sunt laudantium.
-        </div>
-        <div class="message">
-          Quam distinctio explicabo nam laboriosam recusandae laudantium minima
-          quae quis.
-        </div>
-        <div class="message">
-          Amet sit exercitationem nemo vero ratione mollitia magni alias illo!
-        </div>
-        <div class="message">
-          Culpa officiis totam explicabo consequuntur sapiente ex praesentium
-          delectus nesciunt.
-        </div>
-        <div class="message">
-          Nemo laborum voluptatum voluptates facere illo unde libero officia!
-          Accusantium.
-        </div>
-        <div class="message">
-          Voluptates ipsum repudiandae obcaecati eius voluptatibus eaque,
-          deleniti autem quaerat?
-        </div>
-        <div class="message">
-          Neque esse at vero necessitatibus fuga, ratione ad maiores blanditiis!
-        </div>
-        <div class="message">
-          Ea quidem perspiciatis, adipisci cum quos alias. Porro, odio odit?
-        </div>
-        <div class="message">
-          Inventore vero exercitationem esse excepturi nulla laudantium eum
-          dignissimos voluptate.
-        </div>
-        <div class="message">
-          Itaque iste blanditiis tempore, fuga dolores quod! Ex, iure animi.
-        </div>
-        <div class="message">
-          Possimus praesentium iure eaque impedit voluptates dolores nulla quasi
-          molestias.
-        </div>
-        <div class="message">
-          Enim molestiae asperiores repudiandae quae architecto, praesentium
-          incidunt adipisci! Recusandae?
-        </div>
-        <div class="message">
-          Temporibus obcaecati commodi dignissimos ab possimus adipisci fugiat
-          ad id.
-        </div>
-        <div class="message">
-          Atque neque porro architecto corporis eos quo, saepe numquam
-          excepturi!
-        </div>
-        <div class="message">
-          Sed odio, et ipsum harum illo deserunt consectetur non nisi?
-        </div>
-        <div class="message">
-          Optio quod perferendis laborum, rem distinctio autem animi deserunt
-          nemo.
-        </div>
-        <div class="message">
-          Placeat pariatur modi quod voluptate atque saepe rerum eveniet
-          quaerat.
-        </div>
-        <div class="message">
-          Tempore quas numquam unde commodi necessitatibus delectus in nam
-          repudiandae.
-        </div>
-        <div class="message">
-          Ipsam odit natus quis nisi, sed ratione officiis consequatur? Nobis.
-        </div>
-        <div class="message">
-          Alias fuga fugiat facere velit facilis quae tenetur, nemo odio?
-        </div>
-        <div class="message">
-          Atque facilis consequuntur perferendis nihil consequatur perspiciatis
-          dolore quo illo!
-        </div>
-        <div class="message">
-          Quas voluptatem omnis reprehenderit laborum blanditiis, nam dolores
-          modi fuga!
-        </div>
-        <div class="message">
-          Omnis, neque. Id mollitia error, ratione facilis totam quibusdam est?
-        </div>
-        <div class="message">
-          Impedit quas molestias delectus perspiciatis a, distinctio facilis
-          aspernatur similique.
-        </div>
-        <div class="message">
-          Vitae ducimus nam saepe reprehenderit, culpa doloremque magni
-          quibusdam ea.
-        </div>
-        <div class="message">
-          Atque laudantium sint omnis qui odit expedita ut quo ab?
-        </div>
-        <div class="message">
-          Sint cupiditate nihil eum mollitia alias blanditiis dicta ullam at.
-        </div>
-        <div class="message">
-          Quia eveniet sunt odio tempore, illo repudiandae corporis. Et, labore?
-        </div>
-        <div class="message">
-          Consequatur optio est illum nam? Maiores magnam obcaecati voluptas
-          quaerat.
-        </div>
-        <div class="message">
-          Aliquam unde ullam ipsam, est perspiciatis qui accusamus quisquam
-          iure?
-        </div>
-        <div class="message">
-          Quaerat sequi consequuntur ut, ad alias veniam veritatis blanditiis
-          temporibus!
-        </div>
-        <div class="message">
-          Commodi praesentium ullam repellendus deserunt reiciendis explicabo
-          perferendis numquam ad.
-        </div>
-        <div class="message">
-          Iusto aut saepe natus voluptates commodi in ut libero ipsum!
-        </div>
-        <div class="message">
-          Excepturi beatae blanditiis aliquam, porro sapiente expedita? Dolores,
-          corporis delectus.
-        </div>
-        <div class="message">
-          Officia minima, temporibus eos itaque dolorem nisi ex adipisci culpa.
-        </div>
-        <div class="message">
-          Ea mollitia quam atque dolore eaque reprehenderit dolor tempora fuga.
-        </div>
-        <div class="message">
-          Mollitia, autem adipisci sunt fugiat obcaecati minima repellendus
-          distinctio cupiditate?
-        </div>
-        <div class="message">
-          Omnis corporis dolor tenetur, neque explicabo saepe nesciunt expedita
-          in!
-        </div>
-        <div class="message">
-          Ea laudantium tenetur quaerat pariatur eligendi? Culpa ipsam alias
-          doloremque?
-        </div>
-        <div class="message">
-          Blanditiis corporis repellendus error aspernatur quae ex? Quis,
-          officiis voluptas!
-        </div>
-        <div class="message">
-          Incidunt, amet excepturi? Sapiente reprehenderit ad provident itaque
-          natus reiciendis.
-        </div>
-        <div class="message">
-          Vitae quidem corporis eius ipsum nihil dicta nemo quam voluptate?
-        </div>
-        <div class="message">
-          Doloribus, fugiat? Voluptates expedita accusantium mollitia harum
-          doloribus dolore quibusdam!
-        </div>
-        <div class="message">
-          Voluptatibus veritatis eligendi, est quisquam deserunt asperiores
-          praesentium quos accusantium!
-        </div>
-        <div class="message">
-          Numquam quidem corporis accusamus molestias sunt tenetur ea suscipit
-          pariatur.
-        </div>
-        <div class="message">
-          Magnam id accusantium dignissimos aut porro. Repellat nostrum mollitia
-          qui!
-        </div>
-        <div class="message">
-          Assumenda unde in reiciendis. Unde cupiditate excepturi nemo sunt
-          error!
-        </div>
-        <div class="message">
-          Sunt odio aliquam, fuga laborum id delectus nesciunt dicta molestias.
-        </div>
-        <div class="message">
-          Molestiae odit tempore consequatur nesciunt fugiat enim. Provident, ex
-          vero!
-        </div>
-        <div class="message">
-          Aut reiciendis ratione exercitationem. Recusandae eligendi reiciendis
-          quisquam repellat sunt.
-        </div>
-        <div class="message">
-          Laudantium voluptate saepe quo ipsa autem earum hic officia quasi!
-        </div>
-        <div class="message">
-          Sed distinctio minima totam nobis vitae amet voluptatum optio in!
-        </div>
-        <div class="message">
-          Optio quae doloremque labore ex fuga sed quas aperiam atque?
-        </div>
-        <div class="message">
-          At voluptatibus necessitatibus voluptas odit nostrum? Provident itaque
-          maiores eum?
-        </div>
-        <div class="message">
-          Est obcaecati voluptate a itaque id, illum earum natus esse.
-        </div>
-        <div class="message">
-          Commodi minus exercitationem iure voluptates quisquam quas obcaecati
-          eum. Quasi.
-        </div>
-        <div class="message">
-          Assumenda iste necessitatibus itaque minima tempore doloribus,
-          voluptatibus corporis! Aliquam.
-        </div>
-        <div class="message">
-          Quaerat quibusdam et magni debitis numquam corporis dicta sed sequi.
-        </div>
-        <div class="message">
-          Similique molestias quibusdam repellendus asperiores animi incidunt a,
-          ad ipsa!
-        </div>
-        <div class="message">
-          Asperiores sapiente ullam aspernatur possimus rerum voluptates modi
-          magnam fuga.
-        </div>
-        <div class="message">
-          Quod minus nihil, maiores aspernatur in atque fuga unde dolore.
-        </div>
-        <div class="message">
-          Corporis tempore deleniti dolore magni aperiam in animi et saepe?
-        </div>
-        <div class="message">
-          Sed nostrum non facere velit consequuntur ex nobis possimus fugiat.
-        </div>
-        <div class="message">
-          Illum ipsum rem praesentium qui amet nemo rerum repellendus numquam.
-        </div>
-        <div class="message">
-          Cumque eos doloremque a ab eum magni illum natus. Tenetur!
-        </div>
-        <div class="message">
-          Magni soluta, nostrum eum odio sunt voluptatibus nam. Error,
-          accusantium.
-        </div>
-        <div class="message">
-          Molestias quod quos officiis mollitia minima suscipit in blanditiis
-          nobis.
-        </div>
-        <div class="message">
-          Quos obcaecati est cum accusamus exercitationem quidem similique
-          reiciendis nobis.
-        </div>
-        <div class="message">
-          Facilis adipisci est asperiores facere, iure accusantium possimus
-          quasi ipsum.
-        </div>
-        <div class="message">
-          Magni odio distinctio autem iste alias laborum praesentium nesciunt.
-          Obcaecati.
-        </div>
-        <div class="message">
-          Esse molestiae sequi modi eligendi qui, aut blanditiis non expedita.
-        </div>
-        <div class="message">
-          Dolores nam totam nesciunt magnam voluptas libero debitis a nisi?
-        </div>
-        <div class="message">
-          Dolores ad cupiditate culpa facere quidem nobis unde aliquid nulla.
-        </div>
-        <div class="message">
-          Distinctio, commodi molestias blanditiis quos dignissimos voluptatum
-          illo error reprehenderit?
-        </div>
-        <div class="message">
-          Ipsum dolorum veritatis optio in vero exercitationem labore, doloribus
-          impedit.
-        </div>
-        <div class="message">
-          Libero quos nostrum ut dolores, iusto nulla sapiente cumque labore.
-        </div>
-        <div class="message">
-          Alias eveniet, pariatur voluptate neque ad sapiente qui ex nam?
-        </div>
-        <div class="message">
-          Eius accusamus inventore, obcaecati expedita velit dignissimos
-          voluptate cumque laudantium?
-        </div>
-        <div class="message">
-          In tempore nulla repellat ab sint incidunt delectus, fugit numquam!
-        </div>
-        <div class="message">
-          Porro quod voluptatum perspiciatis. Facere iste ab officiis
-          repellendus aperiam!
-        </div>
-        <div class="message">
-          Quaerat vitae laboriosam amet consectetur beatae vero facilis nostrum?
-          Optio.
-        </div>
-        <div class="message">
-          Est amet saepe, reiciendis iure fugiat ab ducimus quod quibusdam?
-        </div>
-        <div class="message">
-          Harum aliquid numquam illo at maxime est ut vel quidem.
-        </div>
-        <div class="message">
-          Adipisci iste omnis recusandae nisi, dolore nam in? Repellat,
-          laudantium.
-        </div>
-        <div class="message">
-          Necessitatibus voluptate commodi voluptatibus quidem aperiam
-          aspernatur dignissimos modi eveniet!
-        </div>
-        <div class="message">
-          Corporis vitae aliquam quas officiis veniam magnam aspernatur,
-          similique vero.
-        </div>
-        <div class="message">
-          Non molestiae ea ipsum necessitatibus similique consequuntur
-          inventore, aperiam temporibus?
-        </div>
-        <div class="message">
-          Esse corporis aperiam dolores modi incidunt, qui repellendus repellat
-          voluptatem.
-        </div>
-        <div class="message">
-          Voluptatibus iusto accusantium magni minus illum non ab dolores enim.
-        </div>
-        <div class="message">
-          Illum impedit nulla nostrum eaque minus cum earum id rerum.
-        </div>
-        <div class="message">
-          Facilis dolor suscipit nemo! Laudantium, doloremque labore. In, sint
-          ipsa.
-        </div>
-        <div class="message">
-          Aliquid, quibusdam? Fugit, ducimus! Earum inventore quidem incidunt
-          consequuntur mollitia!
-        </div>
-        <div class="message">
-          Unde sapiente eaque commodi optio facere rerum quibusdam sed velit.
-        </div>
-        <div class="message">
-          Ullam maiores delectus itaque alias suscipit repellat modi dolorum
-          praesentium.
-        </div>
-        <div class="message">
-          Distinctio ipsam suscipit, voluptatum id tempore nostrum qui
-          consequatur officia!
-        </div>
-        <div class="message">
-          Delectus incidunt fugiat optio soluta aliquid repellat quisquam ullam
-          harum!
-        </div>
-        <div class="message">
-          Libero est culpa eius inventore enim consequuntur optio deleniti
-          saepe.
-        </div>
-        <div class="message">
-          Fuga blanditiis saepe nesciunt provident magnam et enim, similique
-          dolor!
-        </div>
-      </div>
-      <div class="send">
-        <textarea></textarea>
-        <button></button>
-      </div>
-    </div>
-  </body>
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+
+<style id="jsbin-css">
+.app-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+header, footer, main {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+header {
+  top: 0;
+}
+
+footer {
+  bottom: 0;
+}
+
+header, footer {
+  text-align: center;
+  background-color: blue;
+  color: white;
+  height: 48px;
+  line-height: 48px;
+}
+
+footer input {
+  width: 50%;
+}
+
+main {
+  top: 48px;
+  bottom: 48px;
+  background-color: yellow;
+  color: red;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.safari.keyboard .app-container {
+  bottom: 270px;
+}
+
+/*To prevent auto-zoom in Safari*/
+.safari input[type='text'] {
+  font-size: 16px;
+}
+
+</style>
+</head>
+<body>
+  <div class='app-container'>
+  <header>
+    Fixed Header
+  </header>
+  <main>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>     
+  </main>
+  <footer>
+    <input id="inputBox" type="text"/>   
+  </footer>
+  </div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  setPlatformInfo();
+  var inputBox = document.querySelector('.safari #inputBox');
+  if(inputBox) {
+    inputBox.addEventListener('focus', function(e) {
+      document.body.classList.add('keyboard');
+      setTimeout(function() {
+          window.scrollTo(0, 0);
+      }, 200);
+    });
+    
+    inputBox.addEventListener('blur', function(e) {
+      document.body.classList.remove('keyboard');
+    });
+  }
+});
+
+function setPlatformInfo() {
+  var ua = navigator.userAgent.toLowerCase(); 
+  if (ua.indexOf('safari') != -1) { 
+    if (ua.indexOf('chrome') > -1) {
+      document.body.classList.add('chrome');
+    } else {
+      document.body.classList.add('safari');
+    }
+  }
+}
+</script>
+</body>
 </html>
